@@ -25,16 +25,7 @@ Game.appLoginEditScreen.prototype = {
 	},
 
 	preload: function (game) {
-		/*var bmd = game.add.bitmapData(800,600);                
-		bmd.ctx.beginPath();        
-		bmd.ctx.lineWidth = "4";        
-		bmd.ctx.strokeStyle = 'white';        
-		bmd.ctx.setLineDash([2,3]);        
-		bmd.ctx.moveTo(10, 10);        
-		bmd.ctx.lineTo(400 , 400);        
-		bmd.ctx.stroke();        
-		bmd.ctx.closePath();        
-		var sprite = game.add.sprite(200, 400, bmd);*/
+	
 	},
 
 	create: function (game) {
@@ -102,10 +93,7 @@ Game.appLoginEditScreen.prototype = {
 				[_this.basePath + "sounds", "sounds.zip"]
 			];
 		}
-		// else if(_this.user.language == "Gujarati")
-		// {
-
-		// }
+	
 		else if (_this.user.language == "Marathi") {
 			_this.fileCheck = [
 				[_this.basePath + "questionSounds/ALAS-01-G6/Marathi", _this.user.language + "/MarathiquestionSounds.zip"],
@@ -117,10 +105,7 @@ Game.appLoginEditScreen.prototype = {
 				[_this.basePath + "sounds", "sounds.zip"]
 			];
 		}
-		// else if(_this.user.language == "Telugu")
-		// {
-
-		// }
+	
 		else if (_this.user.language == "Tamil") {
 			_this.fileCheck = [
 				[_this.basePath + "questionSounds/ALAS-01-G6/Tamil", _this.user.language + "/TMquestionSounds.zip"],
@@ -132,22 +117,7 @@ Game.appLoginEditScreen.prototype = {
 				[_this.basePath + "sounds", "sounds.zip"]
 			];
 		}
-		// else if(_this.user.language == "Urdu")
-		// {
-		// 	_this.fileCheck = [
-		// 	[_this.basePath+"questionSounds/1.1A/Urdu","Urdu.zip"],
-		// 	[_this.basePath+"assets/commonAssets","Assets1.zip"],
-		// 	[_this.basePath+"assets/demoVideos","Assets2.zip"],
-		// 	[_this.basePath+"assets/conversion","Assets3.zip"],
-		// 	[_this.basePath+"assets/questionSounds/shoppingGame","Assets4.zip"],
-		// 	[_this.basePath+"assets/gradeAssets/4.1","Assets5.zip"],
-		// 	[_this.basePath+"assets/gradeAssets/6.1","Assets6.zip"],
-		// 	[_this.basePath+"assets/DH1","Assets6New.zip"],
-		// 	[_this.basePath+"assets/AddNew","Assets16.zip"]
-		// 	];	
-		// }
-
-
+	
 		_this.splash = game.add.sprite(game.world.centerX, game.world.centerY, 'registrationbg');
 		_this.splash.scale.setTo(1);
 		_this.splash.anchor.setTo(0.5);
@@ -168,11 +138,6 @@ Game.appLoginEditScreen.prototype = {
 		regBackArrowGrph.beginFill(0x4E342E, 0.05);
 		regBackArrowGrph.drawRect(-60, -60, 200, 200);
 		_this.regBackArrow.addChild(regBackArrowGrph);
-
-		// _this.regBackArrow.inputEnabled = true;
-		// _this.regBackArrow.events.onInputDown.add(function () {
-		// 	_this.state.start('appLoginScreen', true, false, _this.app_Mode, _this.user.language);
-		// }, _this);
 
 
 		document.addEventListener('backbutton', function (e) {
@@ -198,13 +163,6 @@ Game.appLoginEditScreen.prototype = {
 		_this.regandstsrtBtn = _this.add.sprite(game.world.centerX, game.world.centerY + 150, 'regandstsrtBtn');
 		_this.regandstsrtBtn.scale.setTo(0.8, 1);
 		_this.regandstsrtBtn.anchor.setTo(0.5);
-
-		// _this.regandstsrtBtn.inputEnabled = true;
-		// _this.regandstsrtBtn.events.onInputDown.add(function () {
-		// 	FirebasePlugin.logEvent("Button_click_start", { Button_click_start: "", item_id: "" });
-		// 	_this.state.start('index2', true, false, _this.user, false);
-		// }, _this);
-
 
 		var textLang = "";
 		if (_this.user.language == "Hindi") {
@@ -242,15 +200,6 @@ Game.appLoginEditScreen.prototype = {
 		_this.regandstsrtBtnTxt.wordWrap = true;
 		_this.regandstsrtBtnTxt.wordWrapWidth = 500;
 
-		// Need to discuss about this with hari sir ********
-		// _this.userEditBtn = _this.add.sprite(game.world.centerX - 150, game.world.centerY, 'userEditBtn');
-		// _this.userEditBtn.scale.setTo(0.4);
-		// _this.userEditBtn.anchor.setTo(0.5);
-		// _this.userEditBtn.inputEnabled = true;
-		// _this.userEditBtn.events.onInputDown.add(function () {
-		// 	_this.state.start('editLangScreen', true, false, _this.user, _this.app_Mode);
-		// }, _this);
-
 		_this.userProgressBtn = _this.add.sprite(game.world.centerX + 150, game.world.centerY, 'userProgressBtn');
 		_this.userProgressBtn.scale.setTo(0.4);
 		_this.userProgressBtn.anchor.setTo(0.5);
@@ -277,7 +226,6 @@ Game.appLoginEditScreen.prototype = {
 				_this.state.start('index2', true, false, _this.user, false, _this.app_Mode);
 			}, _this);
 		}
-
 	},
 
 	checkFileSize: function () {
@@ -419,8 +367,6 @@ Game.appLoginEditScreen.prototype = {
 
 			document.addEventListener('backbutton', _this.goback, false);
 
-
-
 			_this.regandstsrtBtn.inputEnabled = true;
 			_this.regandstsrtBtn.events.onInputDown.add(function () {
 				FirebasePlugin.logEvent("Button_click_start", { Button_click_start: "", item_id: "" });
@@ -456,22 +402,7 @@ Game.appLoginEditScreen.prototype = {
 					if (filename != "EnglishquestionSounds.zip" && filename != "HindiquestionSounds.zip" && filename != "KannadaquestionSounds.zip" && filename != "OdiyaquestionSounds.zip" &&
 						filename != "MarathiquestionSounds.zip" && filename != "TamilquestionSounds.zip") {
 						console.log("Download !!!!!!");
-						// if(filename=="Assets1.zip")
-						// 	_this.noOfAssets.text = "1/7";
-						// else if(filename=="Assets2.zip")
-						// 	_this.noOfAssets.text = "2/7";
-						// else if(filename=="Assets3.zip")
-						// 	_this.noOfAssets.text = "3/7";
-						// else if(filename=="Assets4.zip")
-						// 	_this.noOfAssets.text = "4/7";
-						// else if(filename=="Assets5.zip")
-						// 	_this.noOfAssets.text = "5/7";
-						// else if(filename=="Assets6.zip")
-						// 	_this.noOfAssets.text = "6/7";
-						// else if(filename=="Assets6New.zip")
-						// 	_this.noOfAssets.text = "7/7";
-						// else if(filename=="Assets16.zip")
-						// 	_this.noOfAssets.text = "7/7";
+					
 
 						if (filename == _this.user.language + "/MarathiquestionSounds.zip") {
 							console.log("QSound");
@@ -573,7 +504,6 @@ Game.appLoginEditScreen.prototype = {
 	shutdown: function () {
 		document.removeEventListener('backbutton', _this.goback, false);
 	}
-
 };
 function successFunction() {
 	console.log('Immersive mode set successfully.');
